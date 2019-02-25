@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置数据源 -->
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/ssm_exam"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    &lt;!&ndash; 集成mybatis，创建sqlSessionFactoryBean对象，将mybatis的配置交给spring管理 &ndash;&gt;
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        &lt;!&ndash; 别名包 &ndash;&gt;
+        <property name="typeAliasesPackage" value="com.tree.domain"/>
+        &lt;!&ndash; 映射文件 &ndash;&gt;
+        <property name="mapperLocations">
+            <array>
+                <value>classpath:com/tree/mapper/*Mapper.xml</value>
+            </array>
+        </property>
+        &lt;!&ndash; 指定MyBatis核心配置文件 &ndash;&gt;
+        <property name="configLocation" value="classpath:SqlMapConfig.xml"/>
+        &lt;!&ndash; 注入数据源 &ndash;&gt;
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    &lt;!&ndash; 指定Dao层的扫描，用来生成代理对象 &ndash;&gt;
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        &lt;!&ndash; 指定dao层的包位置 &ndash;&gt;
+        <property name="basePackage" value="com.tree.mapper"/>
+    </bean>-->
+</beans>

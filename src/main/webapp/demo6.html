@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.6.6.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(value,index) in array">
+                {{value}}------{{index}}
+            </li>
+        </ul>
+        =========================================
+        <ul>
+            <li v-for="(value,index) in list">
+                {{value.username}}---{{value.age}}---{{index+1}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            array:["北京","上海","广州","深圳"],
+            list:[{username:"张三",age:17},{username:"李四",age:18},{username:"王五",age:19}]
+        }
+    })
+</script>
+</html>

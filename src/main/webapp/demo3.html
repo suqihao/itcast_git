@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.6.6.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keydown="fun($event)">
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:10
+        },methods: {
+            fun: function(e) {
+                //1.捕获keyCode 判断它是否是0-9  需要使用event对象
+                var keyCode = e.keyCode;
+                if(!(keyCode >= 48 && keyCode <= 57)) {
+                    //2.阻止默认行为执行
+                    e.preventDefault();
+                }
+            }
+        }
+
+    })
+</script>
+</html>

@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.6.6.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <input type="button" value="改变" @click="fun('你好世界')">
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:"helloworld"
+        },methods:{
+            fun : function (mes) {
+                this.message = mes;
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.6.6.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>密码</td>
+            <td>年龄</td>
+            <td>邮箱</td>
+        </tr>
+        <tr v-for="user in userList">
+            <td>{{user.id}}}</td>
+            <td>{{user.username}}}</td>
+            <td>{{user.password}}}</td>
+            <td>{{user.age}}}</td>
+            <td>{{user.email</td>
+        </tr>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            userList:[]
+        },methods:{
+            findAll:function () {
+                axios.get("/user/list").then(function (result) {
+                    vue.userList = result.data;
+                })
+            }
+        },created:function () {
+            this.findAll();
+        }
+    })
+</script>
+</html>

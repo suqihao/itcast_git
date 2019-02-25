@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="./js/vuejs-2.6.6.js"></script>
+<script src="js/axios-0.18.0.js"></script>
+<body>
+<div id="app">
+
+</div>
+</body>
+</html>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+
+        }, methods: {
+            // 初始化
+            init: function () {
+                axios.get("./data/user.json").then(function (response) {
+                    alert(response);
+                    console.log(response);
+                    alert(JSON.stringify(response.data));
+                    alert(response.data[0].username)
+                }).catch(function (error) {
+
+                })
+            }
+        }, created:function () {
+            this.init();
+        }
+    });
+</script>
